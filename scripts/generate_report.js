@@ -302,6 +302,21 @@ function buildReportHtml({ runs, terminalOutput, metrics, terminalScreenshotBase
       </div>
     </section>
 
+    <section class="card" id="python-project-explanation">
+      <h2>About the Python Project</h2>
+      <p>
+        This Python proof-of-concept compares a classical public-key approach (RSA-3072) with a post-quantum key
+        encapsulation mechanism (ML-KEM-768). It benchmarks median key generation times, measures transmitted artifact
+        sizes (public keys and ciphertexts), and verifies that encapsulation/decapsulation produces the same shared
+        secret on both sides.
+      </p>
+      <p>
+        In practical terms, the project demonstrates the core migration trade-off: post-quantum schemes can be very
+        fast while requiring larger keys and ciphertexts than widely used classical baselines. These outputs provide a
+        concrete foundation for evaluating protocol bandwidth impact and planning post-quantum readiness.
+      </p>
+    </section>
+
     <section class="card" id="terminal-output">
       <h2>Terminal Output Evidence</h2>
       <pre>${escapeHtml(terminalOutput)}</pre>
