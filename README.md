@@ -55,3 +55,38 @@ The script prints:
 - Public key size comparison (bytes)
 - Ciphertext size comparison (RSA-OAEP vs ML-KEM encapsulation)
 - Shared secret verification result (`True` when Alice/Bob secrets match)
+
+## Node.js Playwright PDF report (uses Python venv)
+
+This workflow runs the Python PoC with `.venv/bin/python`, then generates:
+
+- `output/pqc-analysis.pdf`
+- `output/report-screenshot-full.png`
+- `output/report-screenshot-keysize.png`
+
+### Setup
+
+```bash
+npm install
+npx playwright install chromium
+```
+
+### Run report generation
+
+```bash
+npm run report
+```
+
+Optional custom run count:
+
+```bash
+npm run report -- --runs 20
+```
+
+The generated report includes:
+
+- Parsed terminal output from `pqc_compare.py`
+- A step-by-step explanation of the reporting script
+- Critical analysis of key-size differences between RSA and ML-KEM
+- A terminal screenshot embedded from the project folder
+- Project link: `https://github.com/shklasith/Post-Quantum-Proof-of-Concept.git`

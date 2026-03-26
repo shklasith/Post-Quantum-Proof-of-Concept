@@ -1,0 +1,12 @@
+{
+  "name": "post-quantum-proof-of-concept",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js Playwright report generator for PQC vs classical crypto analysis.",
+  "scripts": {
+    "report": "node scripts/generate_report.js"
+  },
+  "dependencies": {
+    "playwright": "^1.54.2"
+  }
+}
