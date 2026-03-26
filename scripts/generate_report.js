@@ -320,7 +320,6 @@ function buildReportHtml({ runs, terminalOutput, metrics, terminalScreenshotBase
     <section class="card" id="terminal-output">
       <h2>Terminal Output Evidence</h2>
       <pre>${escapeHtml(terminalOutput)}</pre>
-      <p class="footnote">Screenshot captured from project folder:</p>
       <img class="terminal-shot" src="data:image/png;base64,${terminalScreenshotBase64}" alt="Terminal output screenshot" />
     </section>
 
