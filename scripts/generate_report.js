@@ -275,7 +275,6 @@ function buildReportHtml({ runs, terminalOutput, metrics, terminalScreenshotBase
   <main class="page">
     <section class="card" id="report-header">
       <h1>PQC vs Classical Cryptography Report</h1>
-      <p class="subtitle">Generated with Node.js Playwright using Python venv execution (<code>.venv/bin/python</code>).</p>
       <div class="badge">Run count: ${runs}</div>
     </section>
 
@@ -301,18 +300,6 @@ function buildReportHtml({ runs, terminalOutput, metrics, terminalScreenshotBase
         <div class="metric"><strong>RSA-3072 median keygen</strong><span>${metrics.rsaMedianMs.toFixed(3)} ms</span></div>
         <div class="metric"><strong>ML-KEM-768 median keygen</strong><span>${metrics.mlkemMedianMs.toFixed(3)} ms</span></div>
       </div>
-    </section>
-
-    <section class="card" id="step-by-step">
-      <h2>Step-by-Step Script Behavior</h2>
-      <ol>
-        <li>The Node script validates that <code>.venv/bin/python</code>, <code>pqc_compare.py</code>, and the terminal screenshot file exist.</li>
-        <li>It executes the Python PoC with <code>--runs ${runs}</code> and captures stdout.</li>
-        <li>It parses timing, public-key sizes, ciphertext sizes, and shared-secret match values from that output.</li>
-        <li>It computes the PQC-to-classical size ratios and injects those values into an HTML analysis report.</li>
-        <li>It embeds the project terminal screenshot and the raw Python terminal output for evidence and reproducibility.</li>
-        <li>Playwright renders the page, captures clear PNG screenshots (full report and key-size focus), then exports the PDF report.</li>
-      </ol>
     </section>
 
     <section class="card" id="terminal-output">
